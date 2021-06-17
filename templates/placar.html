@@ -3,11 +3,19 @@
 
 {% block page_content %}
 <h1> Maiores Pontuações dos Usuários</h1>
-
-
-{% for user, score in ziped %}
-{{user}}--{{score}}
 <br>
+<h4>
+    Nome ------- Pontuação
+<hr>
+</h4>
+{% for user, score in ziped %}
+
+<h4>
+    {{user}} ------- {{score}}
+    
+</h4>
+<hr>
+
 {% endfor %}
 
 
