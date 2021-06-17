@@ -11,7 +11,7 @@ class User(UserMixin,db.Model):
     email =db.Column(db.String(64),unique=True, index = True)
     username = db.Column(db.String(64), unique = True, index=True) 
     password_hash = db.Column(db.String(128))
-    confirmed = db.Column(db.Boolean,default=False)
+    confirmed = db.Column(db.Boolean,default=True)
     token = db.Column(db.Integer,default=0)
 
 
