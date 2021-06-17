@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %} Placar Geral {% endblock %}
+
+{% block page_content %}
+<h1> Maiores Pontuações dos Usuários</h1>
+
+
+{% for user, score in ziped %}
+{{user}}--{{score}}
+<br>
+{% endfor %}
+
+
+{% endblock %}

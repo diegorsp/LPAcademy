@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %} Hora da Verdade {% endblock %}
+
+{% block page_content %}
+
+<style>
+.question {
+    font-size: 1.4em;
+}
+
+</style>
+
+{% if quiz_available %}
+
+<div class="quiz-form-wrapper">
+    <div class="quiz-form">
+        <form method="POST" action="quiz-result" name="quiz-form" id="quiz-form">
+            {% for question in questions_list %}
+            <div class="question">{{ question.body|safe }}</div> <br>
+            {% for alternative in random4(question) %}
+            <div class="gambi">
+                <input type="radio" class="form-check-input" name="{{question.body}}" id="{{alternative.body}}" value="{{alternative.body}}">
+                <label for="{{alternative.body}}">{{alternative.body}}</label><br>
+            </div>
+            {% endfor %}
+            <hr>
+            {% endfor %}
+            
+            <input class="responder btn btn-primary" type="submit" value="Responder">
+        </form>
+    </div>
+</div>
+   
+</div>
+ 
+{% else %}
+Não há quiz disponível para você fazer
+{% endif %}
+
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+    
+   

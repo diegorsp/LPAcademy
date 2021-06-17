@@ -1,0 +1,5 @@
+{{ user.username }},
+Obrigado por se cadastrar na  LPAcademy!
+Para confirmar seu email, bastar clicar no link:
+{{ url_for('confirm', token=token, _external=True) }}
+

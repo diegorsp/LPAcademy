@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+
+{% block title %} Seu Perfil {% endblock %}
+
+{% block page_content %}
+<h1>Seu Perfil</h1>
+Nome de Usuário:{{ current_user.username }}<br>
+E-mail:{{ current_user.email }}
+<br>Id: {{ current_user.id}}
+{% endblock %}

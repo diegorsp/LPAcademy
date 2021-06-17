@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title %} Resultado do Quiz {% endblock %}
+
+{% block page_content %}
+
+<div class="main-content result-wrapper">
+    
+    <h2>
+        {{ current_user.username }}, você terminou o Quiz  com {{ score}} pontos.
+    </h2>
+    <br>    
+    {% for question, response, correct in ziped %}
+    
+        <b>Pergunta:</b> {{ question }}
+        <hr>
+        <div class="response-wrapper">
+            <div class="sub-response-wrapper">
+
+                <b>Sua resposta:</b> 
+                    <div class="your-response">{{ response }}</div>
+                <b>Resposta correta:</b>
+                <div class="correct-answer">{{ correct }}</div>
+            </div>
+            <div class="outer-wrapper">
+            <div class="resposta-js"></div>
+            <div class="icon-js"></div>
+            </div>
+        </div>
+            <hr>
+            <br>
+    {% endfor %}
+    
+   
+
+        
+    <button type="button" class="btn btn-primary" onclick="location.href='/'">Voltar</button>
+
+    <hr>
+    
+
+</div>
+
+
+<script>
+  
+    var yourResponses = document.getElementsByClassName('your-response');
+    var correctAnswers = document.getElementsByClassName('correct-answer');
+    var result = document.getElementsByClassName("resposta-js");
+    var icons  = document.getElementsByClassName("icon-js")
+    var responseList = [];
+    var correctList = [];
+
+
+   
+
+    for(var x=0; x< yourResponses.length; x++ ) {
+        
+        responseList.push(yourResponses[x].innerHTML);
+        correctList.push(correctAnswers[x].innerHTML);
+    }
+    console.log(responseList);
+    console.log(correctList);
+
+    for(var x=0; x< responseList.length; x++) {
+        if(responseList[x] == correctList[x]) {
+            console.log('acertou')
+            result[x].innerHTML  ="&#128077 Acertou" ;
+            icons[x].innerHTML  = "Ganhou 50 pontos"
+        } else {
+            console.log('errou')
+            result[x].innerHTML = "&#128169 Errou"
+            icons[x].innerHTML  = "Ganhou 0 pontos"
+        }
+    }
+
+
+
+
+</script>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+    
+   

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}LPAcademy - Confirme sua conta{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>
+        Olá, {{ current_user.username }}!
+    </h1>
+    <h3>Você ainda não confirmou sua conta.</h3>
+    <p>
+        Antes que você possa acessar o site você precisa confirmar sua conta.
+        Olhe a sua caixa de entrada, você deve ter recebido um e-mail com o link de confirmação
+    </p>
+  
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+Página Não Encontrada
+{% endblock %}
+
+{% block content %}
+<div class='error' style="display:flex; flex-direction: column; align-items: center; align-content: center; text-align: center;">
+
+    <h1> PÁGINA NÃO ENCONTRADA</h1>
+    <lottie-player src="{{url_for('static',filename='/lottie/404lottie.json')}}" background="transparent"  speed="1"  style="width: 50vw;" loop autoplay>
+    </lottie-player>
+
+</div>
+
+
+{% endblock %}
+
+

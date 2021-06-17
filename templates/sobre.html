@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}
+Home - LPAcademy
+{% endblock %}
+
+{% block page_content %}
+
+<style>
+    .my-row {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    @media (max-width: 768px) {
+        .my-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    }
+
+
+</style>
+
+<div>
+ <h1>
+     Sobre a LPAcademy:
+ </h1><hr>
+<br><h2 style="text-align: center;">Nosso time:</h2>
+
+ <div class="container">
+    <div class="my-row align-items-start">
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static',filename='img/time1.png')}}" class="card-img-top" alt="..." style="max-width: 150px;">
+                <div class="card-body">
+                    <h4 class="card-title"><b>Front-End:Isabelle Laíse Barroso</b></h4>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static',filename='img/time2.png')}}" class="card-img-top" alt="..." style="max-width: 150px;">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <b>
+                            Back-End:Juan Daniel Teixeira da Fonseca
+                            
+                        </b>
+                    </h4>
+                   
+                </div>
+            </div>
+        </div>
+            
+        <div class="col">
+
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static',filename='img/time3.png')}}" class="card-img-top" alt="..." style="max-width: 150px;">
+        <div class="card-body">
+            <h4 class="card-title"><b>DevOps:
+                Diego Rodrigues Senra Passos</b></h5>
+            
+        </div>
+    </div>
+    
+
+
+</div>
+</div>
+</div>
+<hr>
+
+<h2 style="text-align: center;">Tecnologias Utilizadas:</h2>
+<ul>
+    <li>Flask</li>
+    <li>Bootstrap</li>
+</ul>
+
+</div>
+{% endblock %}
